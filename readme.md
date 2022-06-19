@@ -93,3 +93,22 @@ Não se deve misturar a complexidade técnica com a de negócios, para que a com
   - Consultorias
 - Fase 10
   - Use a imaginação
+
+## Reflexões importantes
+
+- Visão de futuro
+- Limites bem definidos
+- Troca e adição de componentes
+- Escala
+- Otimizações frequentes
+- Preparado para mudanças bruscas
+
+### Reflexões
+
+- Está sendo doloroso para o developer?
+- Poderia ter sido evitado?
+- O software está se pagando?
+- Será que a relação com o cliente está boa?
+- O cliente terá prejuízo com a brusca mudança arquitetural?
+- Em qual momento tudo se perdeu?
+- Se você fosse novo na equipe, você julgaria os desenvolvedores que fizera tudo isso?
