@@ -116,3 +116,13 @@ Não se deve misturar a complexidade técnica com a de negócios, para que a com
 ## Arquitetura vs Design de Software
 
 "Atividades relacionadas a arquitetura de software são sempre de design. Entretanto, nem todas atividades de design são sobre arquitetura. O objetivo primário da arquitetura de software é garantir que os atributos de negócio sejam atendidos pelo sistema. Qualquer decisão de design que não tenha relação com este objetivo não é arquitetural. Todas as decisões de design para um componente que não sejam visíveis fora dele, geralmente, também não são.^Elemar Jr.
+
+## Apresentando arquitetura Hexagonal
+
+"Allow an application to e equally be driven by users, programs, automated test or batch scripts, and to be developed and tested in isolation from its eventual run-time devices and databases." Cockburn
+
+### Arquitetura hexagonal ou ports and adapters
+
+- Aplicação no centro
+- Vários adaptadores com conexões externas
+  - Nenhuma aplicação externa acessa a aplicação diretamente, mas sim os adaptadores.
