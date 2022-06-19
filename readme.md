@@ -112,3 +112,7 @@ Não se deve misturar a complexidade técnica com a de negócios, para que a com
 - O cliente terá prejuízo com a brusca mudança arquitetural?
 - Em qual momento tudo se perdeu?
 - Se você fosse novo na equipe, você julgaria os desenvolvedores que fizera tudo isso?
+
+## Arquitetura vs Design de Software
+
+"Atividades relacionadas a arquitetura de software são sempre de design. Entretanto, nem todas atividades de design são sobre arquitetura. O objetivo primário da arquitetura de software é garantir que os atributos de negócio sejam atendidos pelo sistema. Qualquer decisão de design que não tenha relação com este objetivo não é arquitetural. Todas as decisões de design para um componente que não sejam visíveis fora dele, geralmente, também não são.^Elemar Jr.
