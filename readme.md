@@ -126,3 +126,31 @@ Não se deve misturar a complexidade técnica com a de negócios, para que a com
 - Aplicação no centro
 - Vários adaptadores com conexões externas
   - Nenhuma aplicação externa acessa a aplicação diretamente, mas sim os adaptadores.
+
+### Dinâmica da arquitetura
+
+- Definição de limites e proteção nas regras da aplicação
+- Componentização e desacoplamento
+  - Logs
+  - Cache
+  - Upload
+  - Banco de dados
+  - Comandos
+  - Filas
+  - HTTP / APIs / GraphQL
+- Facilidade na quebra para microsserviços
+
+### Lógica Básica
+
+- Aplicação no centro
+- Cliente no lado esquerdo (qualquer coisa que vai acessar minha aplicação)
+  - REST
+  - CLI
+  - RPC
+  - GraphQL
+  - UI
+- Servidor no lado direito (tudo que minha aplicação precisa acessar)
+  - DB
+  - REDIS
+  - Filesystem
+  - Lambda
