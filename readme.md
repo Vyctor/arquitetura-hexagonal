@@ -154,3 +154,9 @@ Não se deve misturar a complexidade técnica com a de negócios, para que a com
   - REDIS
   - Filesystem
   - Lambda
+
+## Hexagonal vs Clean vs Onion
+
+- Não há padrão estabelecido de como o código deve ser organizado
+- Hexagonal e Onion seguem o mesmo princípio de separação, porém definem as camadas que devo utilizar
+- Quanto mais desacoplado for o código, melhor.
