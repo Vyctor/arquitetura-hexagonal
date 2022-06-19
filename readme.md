@@ -18,3 +18,78 @@ Complexidade técnica, que é a complexidade que eu tenho para resolver a regra 
 Não se deve misturar a complexidade técnica com a de negócios, para que a complexidade técnica não invada as regras de negócio.
 
 ## O Ciclo de um projeto
+
+### Pontos importantes sobre arquitetura
+
+- Crescimento sustentável
+- Software precisa se pagar ao passar do tempo
+- Software deve ser desenhado por você e não pelo seu framework
+- O software deve ser igual um lego, com peças que precisam se encaixar e eventualmente serem substituídos
+
+**Arquitetura diz respeito ao futuro do software. CRUD qualquer um faz.**
+
+### Ciclo de vida de muitos projetos
+
+- Fase 1
+  - Banco de dados
+  - Cadastros
+  - Validações
+  - Servidor Web
+  - Controllers
+  - Views
+  - Autenticação
+  - Upload de arquivos
+- Fase 2
+  - Regras de negócio
+  - Criação de APIs
+  - Consumo de APIs
+  - Autorização
+  - Relatórios
+  - Logs
+- Fase 3
+  - Mais acessos
+  - Upgrade de hardware
+  - Cache
+  - API parceiros
+  - Regras parceiros
+  - Relatórios
+- Fase 4
+  - Mais acessos
+  - Upgrade de hardware
+  - BD relatórios
+  - Comandos
+  - V2 da API
+- Fase 5
+  - Escala horizontal
+  - Sessões
+  - Uploads
+  - Refatoração
+  - Autoscaling
+  - CI/CD
+- Fase 6
+  - GraphQL
+  - Bugs constantes
+  - Logs? Ops
+  - Integração CRM
+  - Migração para React
+- Fase 7
+  - Inconsistência CRM
+  - Containers
+  - CI/CD
+  - Memória
+  - Logs
+  - Se livrar do legado
+- Fase 8
+  - Microsserviços
+  - DB compartilhado
+  - Problemas de tracing
+  - Lentidão
+  - Custo elevado
+- Fase 9
+  - Kubernetes
+  - CI/CD
+  - Mensageria
+  - Perda de mensagens
+  - Consultorias
+- Fase 10
+  - Use a imaginação
