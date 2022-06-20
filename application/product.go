@@ -3,8 +3,14 @@ package application
 import (
 	"errors"
 
+	uuid "github.com/satori/go.uuid"
+
 	"github.com/asaskevich/govalidator"
 )
+
+func init() {
+	govalidator.SetFieldsRequiredByDefault(true)
+}
 
 type ProductInterface interface {
 	IsValid() (bool, error)
@@ -14,6 +20,26 @@ type ProductInterface interface {
 	GetName() string
 	GetStatus() string
 	GetPrice() float64
+}
+
+type ProductServiceInterface interface {
+	Get(id string) (ProductInterface, error)
+	Create(name string, price float64) (ProductInterface, error)
+	Enable(product ProductInterface) (ProductInterface, error)
+	Disable(product ProductInterface) (ProductInterface, error)
+}
+
+type ProductReader interface {
+	Get(id string) (ProductInterface, error)
+}
+
+type ProductWriter interface {
+	Save(product ProductInterface) (ProductInterface, error)
+}
+
+type ProductPersistenceInterface interface {
+	ProductReader
+	ProductWriter
 }
 
 const (
@@ -28,8 +54,17 @@ type Product struct {
 	Status string  `valid:"required"`
 }
 
-func init() {
-	govalidator.SetFieldsRequiredByDefault(true)
+func NewProduct() *Product {
+
+	id := uuid.NewV4().String()
+	status := DISABLED
+
+	product := Product{
+		ID:     id,
+		Status: status,
+	}
+
+	return &product
 }
 
 func (product *Product) IsValid() (bool, error) {
