@@ -41,16 +41,21 @@ func (product *Product) IsValid() (bool, error) {
 }
 
 func (product *Product) Enable() error {
-	if product.Status == ENABLED {
-		return errors.New("Product is already enabled")
+	if product.Price <= 0 {
+		return errors.New("price must be greater than zero to enable the product")
 	}
+
+	if product.Status == ENABLED {
+		return errors.New("product is already enabled")
+	}
+
 	product.Status = ENABLED
 	return nil
 }
 
 func (product *Product) Disable() error {
 	if product.Status == DISABLED {
-		return errors.New("Product is already disabled")
+		return errors.New("product is already disabled")
 	}
 	product.Status = DISABLED
 	return nil
