@@ -16,8 +16,12 @@ func main() {
 	product, err := productService.Create("Product Test", 30.0)
 
 	if err != nil {
-		panic(err)
+		panic(err.Error())
 	}
 
-	productService.Enable(product)
+	_, err = productService.Enable(product)
+
+	if err != nil {
+		panic(err.Error())
+	}
 }
