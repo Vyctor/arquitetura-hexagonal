@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"encoding/json"
 	"net/http"
 
 	"github.com/codeedu/go-hexagonal/application"
@@ -8,10 +9,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func MakeProductHandlers(router *mux.Router, negroni *negroni.Negroni, service application.ProductServiceInterface) {
-	router.HandleFunc("/product/{id}", negroni.With(
+func MakeProductHandlers(r *mux.Router, n *negroni.Negroni, service application.ProductServiceInterface) {
+	r.Handle("/products/{id}", n.With(
 		negroni.Wrap(getProduct(service)),
-	)).Methods("GET", "OPTIONS")
+	))
 }
 
 func getProduct(service application.ProductServiceInterface) http.Handler {
@@ -19,11 +20,18 @@ func getProduct(service application.ProductServiceInterface) http.Handler {
 		w.Header().Set("Content-Type", "application/json")
 		vars := mux.Vars(r)
 		id := vars["id"]
+
 		product, err := service.Get(id)
 
 		if err != nil {
 			w.WriteHeader(http.StatusNotFound)
 			return
 		}
-	}
+		err = json.NewEncoder(w).Encode(product)
+
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+	})
 }
