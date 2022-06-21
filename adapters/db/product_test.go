@@ -1,8 +1,12 @@
-package db
+package db_test
 
 import (
 	"database/sql"
 	"log"
+	"testing"
+
+	"github.com/codeedu/go-hexagonal/adapters/db"
+	"github.com/stretchr/testify/require"
 )
 
 var Db *sql.DB
@@ -40,4 +44,16 @@ func createProduct(db *sql.DB) {
 	}
 
 	stmt.Exec()
+}
+
+func TestProductDb_Get(test *testing.T) {
+	setUp()
+	defer Db.Close()
+	productDb := db.NewProductDB(Db)
+	product, error := productDb.Get("abc")
+
+	require.Nil(test, error)
+	require.Equal(test, "Product Test", product.GetName())
+	require.Equal(test, 0.0, product.GetPrice())
+	require.Equal(test, "disabled", product.GetStatus())
 }
